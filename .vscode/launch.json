@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/margaferriol/Desktop/UPF 2/1ER TRIMESTRE/POO/UPF-POO26-G201-04",
+      "program": "/Users/margaferriol/Desktop/UPF 2/1ER TRIMESTRE/POO/UPF-POO26-G201-04/build/Debug/outDebug"
+    }
+  ]
+}
