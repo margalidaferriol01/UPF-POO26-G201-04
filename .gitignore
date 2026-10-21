@@ -1,4 +1,7 @@
-*.o
-*.exe
-./src/*.o
-./src/*.exe
+cat << 'EOF' >> .gitignore
+.DS_Store
+*.dSYM/
+output/
+programa
+main
+EOF
