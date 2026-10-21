@@ -6,8 +6,9 @@
 #include "Ticket.h"
 #include "Visitor.h"
 
-using namespace std;
 
 int main(){
     
 }
+
+// Test
