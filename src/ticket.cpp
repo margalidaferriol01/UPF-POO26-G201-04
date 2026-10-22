@@ -1,5 +1,4 @@
 #include "Ticket.h"
-#include <string>
 
 Ticket::Ticket(int id, double price){
     this->id = id;
