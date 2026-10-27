@@ -18,6 +18,12 @@ void Area::setDescription(string d) {
 }
 
 void Area::addAttraction(Attraction a) {
+    // Comprovar si l'atracció ja existeix per evitar duplicats
+    for (const auto& attr : this->attractions) {
+        if (attr.getName() == a.getName()) {
+            return; // Ja existeix, no la tornem a afegir
+        }
+    }
     this->attractions.push_back(a);
 }
 
@@ -28,5 +34,5 @@ bool Area::removeAttraction(string name) {
             return true;
         }
     }
-    return false;
+    return false; // Retorna false si l'atracció no hi era
 }
