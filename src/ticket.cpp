@@ -2,7 +2,10 @@
 
 Ticket::Ticket(int id, double price){
     this->id = id;
-    this->price = price;
+    
+    if(price>=0) this->price = price;
+    else price = 0.0; // si el preu és negatiu, el posem a 0
+
     valid = true;
 }
 
