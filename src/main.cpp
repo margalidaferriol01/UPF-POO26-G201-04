@@ -51,9 +51,9 @@ int main(){
     std::cout <<ticket2.getPrice() << std::endl; //comprovem que el preu s'hagi posat a 0.0
 
     Visitor visitor1("Peppa", 86);
-    std::cout << "Visitor name: \n" << visitor1.getName() << "Visitor age: " << visitor1.getAge() << std::endl;
+    std::cout << "Visitor name: " << visitor1.getName() << "\nVisitor age: " << visitor1.getAge() << std::endl;
 
     Visitor visitor2("Peppo", -93); //visitor amb edat negativa
-    std::cout << "Visitor name: \n" << visitor2.getName() << "Visitor age: " << visitor2.getAge() << std::endl;
+    std::cout << "Visitor name: " << visitor2.getName() << "\nVisitor age: " << visitor2.getAge() << std::endl;
 
 }
