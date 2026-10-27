@@ -1,6 +1,10 @@
 #ifndef VISITOR_H
 #define VISITOR_H
 
+#include <string>
+#include <vector>
+#include "Ticket.h"
+
 
 class Visitor {
     private:
@@ -8,7 +12,7 @@ class Visitor {
         int age;
         std::vector <Ticket> tickets;
     public:
-        Visitor(std::string name, int age);
+        Visitor(std::string n, int a);
         std::string getName();
         int getAge();
         void setName(std::string n);
