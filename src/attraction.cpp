@@ -2,9 +2,9 @@
 
 Attraction::Attraction(string n, int cap, int dur, double price) {
     this->name = n;
-    this->maxCapacity = cap;
-    this->duration = dur;
-    this->price = price;
+    this->maxCapacity = (cap > 0) ? cap : 1;
+    this->duration = (dur > 0) ? dur : 1;
+    this->price = (price >= 0.0) ? price : 0.0;
     this->running = false; // Comença aturada per defecte
 }
 
