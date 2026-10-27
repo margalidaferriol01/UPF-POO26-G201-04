@@ -25,7 +25,7 @@ bool Park::removeArea(string name) {
             return true;
         }
     }
-    return false;
+    return false; // Retorna false si l'àrea no existeix al parc
 }
 
 void Park::addVisitor(Visitor visitor) {
@@ -39,5 +39,5 @@ bool Park::removeVisitor(Visitor visitor) {
             return true;
         }
     }
-    return false;
+    return false; // Retorna false si el visitant no està registrat
 }
