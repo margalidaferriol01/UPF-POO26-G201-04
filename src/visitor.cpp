@@ -32,7 +32,7 @@ void Visitor::addTicket(Ticket t){
 
 bool Visitor::removeTicket(Ticket t){
     // itera dins de <tickets> per trobar el que es vol esborrar
-    for(int i = 0; i<tickets.size(); i++){
+    for (size_t i = 0; i < tickets.size(); i++) {
         if(tickets.at(i).getId() == t.getId()) { // utilitzem l'id dels tickets per diferenciar-los
             tickets.erase(tickets.begin() + i); // tickets.begin apunta a la primera posició del vector
             return true;

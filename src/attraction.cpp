@@ -5,7 +5,7 @@ Attraction::Attraction(string n, int cap, int dur, double price) {
     this->maxCapacity = (cap > 0) ? cap : 1;
     this->duration = (dur > 0) ? dur : 1;
     this->price = (price >= 0.0) ? price : 0.0;
-    this->running = false; // Comença aturada per defecte
+    this->running = false; //comença aturada per defecte
 }
 
 string Attraction::getName() const {

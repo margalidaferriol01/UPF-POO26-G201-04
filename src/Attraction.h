@@ -16,13 +16,13 @@ public:
 
     Attraction(string n, int cap, int dur, double price);
 
-    // Getters
+    //getters
     string getName() const;
     int getMaxCapacity() const;
     int getDuration() const;
     double getPrice() const;
 
-    // Setters
+    //setters
     void setMaxCapacity(int cap);
     void setDuration(int dur);
     void setPrice(double price);

@@ -15,12 +15,12 @@ private:
 public:
     Area(string name, string description);
 
-    // Getters i Setters
+    //getters i setters
     string getName() const;
     string getDescription() const;
     void setDescription(string d);
 
-    // Mètodes de gestió d'atraccions
+    //mètodes de gestió d'atraccions
     void addAttraction(Attraction a);
     bool removeAttraction(string name);
 };
