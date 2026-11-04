@@ -6,10 +6,7 @@ Margalida Ferriol Torres (u266481), Martí Carrasco Guitart (u266404) - P201 / G
 
 En aquest laboratori, l’objectiu és implementar totes les classes que s’especifiquen en el diagrama UML del Seminari 1, amb els seus atributs i mètodes corresponents. Llavors, s’ha de testejar el correcte funcionament de la implementació creant objectes amb diversos atributs, i imprimint-los per pantalla per veure que hi hagi els valors esperats. Hem utilitzat el diagrama proporcionat en el document: 
 
-
-
-<!-- Start of picture text -->
-~ name : string ~ name : string<br>- areas : array <Area> - age: int<br>~visitors : array <Visitor tickets © vector <Ticket><br>+ Park(name : string) 1 0--* | + Visitor‘name:string, age:int)<br>+ getName() : string + getName() : string<br>+ setName(name : string): void + getAge(): int<br>+ addArea(area :Area) : void + setName(n:string) : void<br>++ removeArea(area : Area) : void + setAge(a:int): void<br>+ removeVisitor(visitoraddVisitor(visitor : Visitor) : Visitor) : void: bool ++ addTicket(tremoveTicket(t Ticket):Ticket):bool void<br>1 1<br>0--*<br>“Weal<br>name:= descriptionstring: string 4 - name : string = valid: bool<br>~ aftractions : vector <Attraction> ~maxCapactty: int<br>++++ Area(name, getName() getDescription( setDescription(:: stringdescription)stringstring) - 0-4 ~~") ~-runningdurationBice:+ Aftraction(n:string,double :: boot int capint, durin, ++++invalidate+ getPrice() isValid() getid():Ticket(idint, int- boo!- double: price:double)void<br>+ addAttraction(a Attraction) void Price double)<br>+ removedttraction(n:name):boolean + getName) : string<br>+ getMaxCapacity() : int<br>+ getDurationd : int<br>+ getPrice() : double<br>+ setMaxCapacty<br>+ setDuration(int): (int):voidvoid<br>+ setPrice(double): void<br>+++ stopisRunning():start):: voidvoid bool<br><!-- End of picture text -->
+<img width="774" height="598" alt="Screenshot 2026-11-04 at 18 46 34" src="https://github.com/user-attachments/assets/a3687d4c-077f-494d-a2bc-28c0d0535b4a" />
 
 # **2. Implementació** 
 
