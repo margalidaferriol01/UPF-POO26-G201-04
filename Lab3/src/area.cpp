@@ -17,22 +17,29 @@ void Area::setDescription(string d) {
     this->description = d;
 }
 
-void Area::addAttraction(Attraction a) {
-    //comprovar si l'atracció ja existeix per evitar duplicats
+void Area::addAttraction(Attraction* a) {
+
+    // comprovar si l'atracció ja existeix per evitar duplicats
     for (const auto& attr : this->attractions) {
-        if (attr.getName() == a.getName()) {
-            return; //ja existeix, no la tornem a afegir
+        if (attr->getName() == a->getName()) {
+            return;
         }
     }
+
     this->attractions.push_back(a);
 }
 
 bool Area::removeAttraction(string name) {
-    for (auto it = this->attractions.begin(); it != this->attractions.end(); ++it) {
-        if (it->getName() == name) {
+
+    for (auto it = this->attractions.begin();
+         it != this->attractions.end();
+         ++it) {
+
+        if ((*it)->getName() == name) {
             this->attractions.erase(it);
             return true;
         }
     }
-    return false; //retorna false si l'atracció no hi era
+
+    return false;
 }
