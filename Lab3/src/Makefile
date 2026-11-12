@@ -25,3 +25,8 @@ $(TARGET): $(OBJS)
 # Regla per netejar el directori (esborra els .o i l'executable)
 clean:
 	rm -f $(OBJS) $(TARGET)
+
+# COMMANDS:
+# 	Compilar: make
+#	Executar: ./TestPark
+#	Netejar fitxers binaris/objectes: make clean
