@@ -10,7 +10,7 @@ class Area {
 private:
     string name;
     string description;
-    vector<Attraction> attractions;
+    vector<Attraction*> attractions;
 
 public:
     Area(string name, string description);
@@ -21,7 +21,7 @@ public:
     void setDescription(string d);
 
     //mètodes de gestió d'atraccions
-    void addAttraction(Attraction a);
+    void addAttraction(Attraction* a);
     bool removeAttraction(string name);
 };
 
