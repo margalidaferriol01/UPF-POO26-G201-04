@@ -23,6 +23,13 @@ public:
     //mètodes de gestió d'atraccions
     void addAttraction(Attraction* a);
     bool removeAttraction(string name);
+
+    // mètodes nous de Lab 3
+    int getRunningAttractionsCount() const;
+    bool hasAttraction(string name) const;
+
+    // mètode auxiliar
+    int getAttractionsCount() const;
 };
 
 #endif

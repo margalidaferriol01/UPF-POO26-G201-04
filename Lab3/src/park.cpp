@@ -41,3 +41,24 @@ bool Park::removeVisitor(Visitor visitor) {
     }
     return false; //retorna false si el visitant no està registrat
 }
+
+
+int Park::getTotalAttractions() const {
+    int count = 0;
+
+    for (const auto& area : this->areas) {
+        count += area.getAttractionsCount();
+    }
+
+    return count;
+}
+
+bool Park::isVisitorRegistered(string name) const {
+    for (const auto& visitor : this->visitors) {
+        if (visitor.getName() == name) {
+            return true;
+        }
+    }
+
+    return false;
+}

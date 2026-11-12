@@ -43,3 +43,29 @@ bool Area::removeAttraction(string name) {
 
     return false;
 }
+
+int Area::getRunningAttractionsCount() const {
+    int count = 0;
+
+    for (const auto& attr : this->attractions) {
+        if (attr->isRunning()) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+bool Area::hasAttraction(string name) const {
+    for (const auto& attr : this->attractions) {
+        if (attr->getName() == name) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+int Area::getAttractionsCount() const {
+    return this->attractions.size();
+}

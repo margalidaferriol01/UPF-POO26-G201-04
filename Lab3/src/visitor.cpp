@@ -10,11 +10,11 @@ Visitor::Visitor(std::string n, int a){
     else this->age = 0; // si l'edat és negativa, la posem a 0
 }
 
-std::string Visitor::getName(){
+std::string Visitor::getName()const{
     return this->name;
 }
 
-int Visitor::getAge(){
+int Visitor::getAge()const{
     return this->age;
 }
 
@@ -23,7 +23,7 @@ void Visitor::setName(std::string n){
 }
 
 void Visitor::setAge(int a){
-    if (a>0) this->age = a; // si l'edat a és negativa, age no es modifica
+    if (a>=0) this->age = a; // si l'edat a és negativa, age no es modifica
 }
 
 void Visitor::addTicket(Ticket t){

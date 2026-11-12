@@ -26,6 +26,10 @@ public:
 
     void addVisitor(Visitor visitor);
     bool removeVisitor(Visitor visitor);
+
+    // mètodes nous de Lab 3
+    int getTotalAttractions() const;
+    bool isVisitorRegistered(string name) const;
 };
 
 #endif
