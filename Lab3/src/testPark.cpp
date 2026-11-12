@@ -35,7 +35,6 @@ int main() {
 
     std::cout << std::endl;
 
-
     // TEST WATER RIDE
     WaterRide attraction1("Dragon Khan", -10, 0, -5.0, 120.0);
     WaterRide attraction2("Shambhala", 30, 3, 10.0, 130.0);
@@ -62,4 +61,21 @@ int main() {
 
     std::cout << "[WaterRide] Estat despres de prepare(): "
             << attraction1.isRunning() << std::endl;
+
+    std::cout << "[WaterRide] Visitant de 130cm permès: "
+          << attraction1.isVisitorAllowed(130.0) << std::endl; // esperat: true
+
+    std::cout << "[WaterRide] Visitant de 100cm permès: "
+            << attraction1.isVisitorAllowed(100.0) << std::endl; // esperat: false
+
+    attraction1.setMinHeight(150.0);
+
+    std::cout << "[WaterRide] Altura minima modificada: "
+            << attraction1.getMinHeight() << std::endl; // esperat: 150
+
+    std::cout << "[WaterRide] Visitant de 150cm permès: "
+            << attraction1.isVisitorAllowed(150.0) << std::endl; // esperat: true
+
+    std::cout << "[WaterRide] Visitant de 140cm permès: "
+            << attraction1.isVisitorAllowed(140.0) << std::endl; // esperat: false
 }
