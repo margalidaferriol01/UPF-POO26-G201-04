@@ -13,14 +13,14 @@ int Ticket::getId(){
     return this->id; // retornem id
 }
 
-double Ticket::getPrice(){
+double Ticket::getPrice()const{
     return this->price; // retornem preu
 }
 
-void Ticket::invalidate(){
+void Ticket::invalidate()  {
     this->valid = false; // forçem que s'invalidi
 }
 
-bool Ticket::isValid(){
+bool Ticket::isValid() const {
     return this->valid;
 }

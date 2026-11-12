@@ -9,9 +9,9 @@ class Ticket {
     public:
         Ticket(int id, double price);
         int getId();
-        double getPrice();
+        double getPrice() const;
         void invalidate();
-        bool isValid();
+        bool isValid()const;
 };
 
 #endif

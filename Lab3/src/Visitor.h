@@ -5,12 +5,14 @@
 #include <vector>
 #include "Ticket.h"
 
+using namespace std;
 
 class Visitor {
     private:
         std::string name;
         int age;
         std::vector <Ticket> tickets;
+        string currentArea;
     public:
         Visitor(std::string n, int a);
         std::string getName();
@@ -19,6 +21,10 @@ class Visitor {
         void setAge(int a);
         void addTicket(Ticket t);
         bool removeTicket(Ticket t);
+        void moveToArea(string areaName);
+        string getCurrentArea() const;
+        double getTotalSpent() const;
+        int getValidTicketsCount() const;
 };
 
 #endif
