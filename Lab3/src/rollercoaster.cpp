@@ -11,7 +11,7 @@ Rollercoaster::Rollercoaster(std::string n, int cap, int dur,
 }
 
 double Rollercoaster::getMaxSpeed(){
-    return this->maxSpeed;
+    return this->maxSpeed; 
 }
 
 int Rollercoaster::getLoops(){
@@ -19,11 +19,11 @@ int Rollercoaster::getLoops(){
 }
 
 void Rollercoaster::setMaxSpeed(double speed){
-    if(speed>0.0) this->maxSpeed = speed;
+    if(speed>0.0) this->maxSpeed = speed; // comprovem que speed sigui major que zero
 }
 
 void Rollercoaster::setLoops(int loops){
-    if(loops>=0) this->loops = loops;
+    if(loops>=0) this->loops = loops; // comprovem que loops sigui major o igual a 0
 }
 
 void Rollercoaster::checkSafetySystem(){
@@ -31,6 +31,6 @@ void Rollercoaster::checkSafetySystem(){
 }
 
 bool Rollercoaster::isExtremeCoaster(){
-    if(maxSpeed > 80.0 | loops > 2) return true;
+    if(maxSpeed > 80.0 | loops > 2) return true; // comprovem maxspeed major que 80 i loops majors que 2 amb un OR
     else return false;
 }
