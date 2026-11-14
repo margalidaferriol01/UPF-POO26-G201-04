@@ -2,8 +2,9 @@
 #define ROLLERCOASTER_H
 
 #include <string>
+#include "Attraction.h"
 
-class Rollercoaster{
+class Rollercoaster : public Attraction{
     private:
         double maxSpeed;
         int loops;
