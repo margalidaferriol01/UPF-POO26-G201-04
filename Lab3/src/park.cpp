@@ -41,3 +41,19 @@ bool Park::removeVisitor(Visitor visitor) {
     }
     return false; //retorna false si el visitant no està registrat
 }
+
+int Park::getTotalAttractions(){
+    int count = 0;
+    // anem sumant el nombre d'atraccions que té cada àrea
+    for(size_t i=0; i<areas.size(); i++){
+        i+=areas.at(i).getTotalAreaAttractionsCount();
+    }
+    return count;
+}
+
+bool Park::isVisitorRegistered(string name){
+    for(size_t i=0; i<visitors.size(); i++){ // bucle que itera per cada visitant
+        if(visitors.at(i).getName() == name) return true;
+    }
+    return false;
+}

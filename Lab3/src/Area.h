@@ -27,6 +27,7 @@ public:
     //extensió 6.2 lab 3
     int getRunningAttractionsCount();
     bool hasAttraction(string name);
+    int getTotalAreaAttractionsCount();
 };
 
 #endif
