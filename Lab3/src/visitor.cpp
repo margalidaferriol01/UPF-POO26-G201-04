@@ -40,3 +40,37 @@ bool Visitor::removeTicket(Ticket t){
     }
     return false;
 }
+
+void Visitor::moveToArea(string areaName)
+{
+    currentArea = areaName;
+}
+
+string Visitor::getCurrentArea() const
+{
+    return currentArea;
+}
+
+double Visitor::getTotalSpent() const
+{
+    double total = 0.0;
+
+    for (size_t i = 0; i < tickets.size(); i++) {
+        total += tickets.at(i).getPrice();
+    }
+
+    return total;
+}
+
+int Visitor::getValidTicketsCount() const
+{
+    int count = 0;
+
+    for (size_t i = 0; i < tickets.size(); i++) {
+        if (tickets.at(i).isValid()) {
+            count++;
+        }
+    }
+
+    return count;
+}
