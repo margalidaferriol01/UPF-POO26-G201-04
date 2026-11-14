@@ -1,7 +1,6 @@
 #ifndef ROLLERCOASTER_H
 #define ROLLERCOASTER_H
 
-#include <string>
 #include "Attraction.h"
 
 class Rollercoaster : public Attraction{

@@ -2,7 +2,6 @@
 #define SIMULATOR_H
 
 #include "Attraction.h"
-#include <string>   
 
 using namespace std;
 
