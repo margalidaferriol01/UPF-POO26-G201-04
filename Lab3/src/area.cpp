@@ -43,3 +43,20 @@ bool Area::removeAttraction(string name) {
 
     return false;
 }
+
+int Area::getRunningAttractionsCount(){
+    int count = 0;
+    for(int i = 0; i<attractions.size(); i++){ // iterem tots els elements del vector
+        // si la atracció està corrent, sumem 1 al contador
+        if(attractions.at(i)->isRunning() == true) count++;
+    }
+    return count;
+}
+
+bool Area::hasAttraction(string name){
+    for(int i = 0; i<attractions.size(); i++){ // iterem tots els elements del vector
+        // si un coincideix, retornem true
+        if(attractions.at(i)->getName() == name) return true; 
+    }
+    return false; // si no se-n'ha trobat cap que coincideixi
+}

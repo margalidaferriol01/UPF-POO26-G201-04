@@ -23,6 +23,10 @@ public:
     //mètodes de gestió d'atraccions
     void addAttraction(Attraction* a);
     bool removeAttraction(string name);
+
+    //extensió 6.2 lab 3
+    int getRunningAttractionsCount();
+    bool hasAttraction(string name);
 };
 
 #endif
