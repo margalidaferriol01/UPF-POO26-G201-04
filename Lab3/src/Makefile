@@ -30,3 +30,5 @@ clean:
 # 	Compilar: make
 #	Executar: ./TestPark
 #	Netejar fitxers binaris/objectes: make clean
+
+# (Makefile fet amb IA)

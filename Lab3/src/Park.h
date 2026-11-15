@@ -1,8 +1,6 @@
 #ifndef PARK_H
 #define PARK_H
 
-#include <string>
-#include <vector>
 #include "Area.h"
 #include "Visitor.h"
 
@@ -26,6 +24,9 @@ public:
 
     void addVisitor(Visitor visitor);
     bool removeVisitor(Visitor visitor);
+
+    int getTotalAttractions();
+    bool isVisitorRegistered(string name);
 };
 
 #endif
