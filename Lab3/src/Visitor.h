@@ -15,8 +15,8 @@ class Visitor {
         string currentArea;
     public:
         Visitor(std::string n, int a);
-        std::string getName();
-        int getAge();
+        std::string getName() const;
+        int getAge()const;
         void setName(std::string n);
         void setAge(int a);
         void addTicket(Ticket t);
