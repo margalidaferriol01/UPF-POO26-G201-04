@@ -1,4 +1,3 @@
-#include <string>
 #include <iostream>
 
 #include "Area.h"
@@ -7,61 +6,59 @@
 #include "Visitor.h"
 #include "WaterRide.h"
 #include "Simulator.h"
+#include "Rollercoaster.h"
 
 int main() {
-    // mostra els valors booleans com 'true' / 'false' en lloc de 1 / 0
-    std::cout << std::boolalpha;
+    std::cout << std::boolalpha; // mostra els valors booleans com 'true' / 'false' en lloc de 1 / 0
 
-    // TEST TICKET
-    Ticket ticket1(125, 8); // ID=125
-    std::cout << "[Ticket] Ticket 1 price: "
-              << ticket1.getPrice() << std::endl;
+    // TEST ROLLERCOASTER
+    Rollercoaster coaster1("Furious Baco", 25, 2, 8.0, 70.0, 2);
+    Rollercoaster coaster2("Shambala", -28, -4, -8.0, 0.0, -1);
 
-    std::cout << "[Ticket] Ticket validation: "
-              << ticket1.isValid() << std::endl;
+    std::cout << "[Rolercoaster 1] Nom: "
+              << coaster1.getName() << std::endl;
+    std::cout << "[Rolercoaster 2] Nom: "
+              << coaster2.getName() << std::endl;
+    std::cout << "[Rollercoaster 2] Capacitat corregida: "
+              << coaster2.getMaxCapacity() << std::endl;
+    std::cout << "[Rollercoaster 2] Durada corregida: "
+              << coaster2.getDuration() << std::endl;
+    std::cout << "[Rollercoaster 2] Preu corregit: "
+              << coaster2.getPrice() << std::endl;
+    std::cout << "[Rollercoaster 2] Velocitat corregida: "
+              << coaster2.getMaxSpeed() << std::endl;
+    std::cout << "[Rollercoaster 2] Nombre de loops corregit: "
+              << coaster2.getLoops() << std::endl;
 
-    ticket1.invalidate();
+    //Modifiquem valors de coaster1 amb valors incorrectes:
+    std::cout << "[Rollercoaster 1] MaxSpeed abans de canviar: "
+              << coaster1.getMaxSpeed() << std::endl;
+    coaster1.setMaxSpeed(-2.0);
+    std::cout << "[Rollercoaster 1] MaxSpeed després d'intent fallit de canviar: "
+              << coaster1.getMaxSpeed() << std::endl;
+              
+    
+    std::cout << "[Rollercoaster 1] Loops abans de canviar: "
+              << coaster1.getLoops() << std::endl;
+    coaster1.setLoops(-2);
+    std::cout << "[Rollercoaster 1] Loops després d'intent fallit de canviar: "
+              << coaster1.getLoops() << std::endl;
 
-    std::cout << "[Ticket] Ticket invalidation: "
-              << ticket1.isValid() << std::endl;
-
-    Ticket ticket2(150, -5); // ID=150, preu negatiu
-    std::cout << "[Ticket] Ticket 2 price: "
-              << ticket2.getPrice() << std::endl; // esperat: 0.0
-
-    std::cout << std::endl;
-
-    // TEST VISITOR
-    Visitor visitor1("Peppa", 86);
-    visitor1.addTicket(ticket2); // associem un tiquet al visitant
-
-    std::cout << "[Visitor] Visitor name: "
-              << visitor1.getName()
-              << "\n[Visitor] Visitor age: "
-              << visitor1.getAge()
-              << std::endl;
-
-    std::cout << "[Visitor] Eliminar tiquet inexistent: "
-              << visitor1.removeTicket(ticket1)
-              << std::endl; // esperat: false
-
-    std::cout << "[Visitor] Eliminar tiquet existent: "
-              << visitor1.removeTicket(ticket2)
-              << std::endl; // esperat: true
-
-    Visitor visitor2("Peppo", -93); // visitor amb edat negativa
-
-    std::cout << "[Visitor] Visitor name: "
-              << visitor2.getName()
-              << "\n[Visitor] Visitor age: "
-              << visitor2.getAge()
-              << std::endl; // esperat: 0
+    // mirem extreme coaster
+    std::cout << "[Rollercoaster 1] És extreme coaster (abans)?: "
+            << coaster1.isExtremeCoaster() << std::endl;
+    // canviem velocitat a una major a 80:
+    coaster1.setMaxSpeed(100.0);
+    // comparem
+    std::cout << "[Rollercoaster 1] És extreme coaster (després)?: "
+            << coaster1.isExtremeCoaster() << std::endl;
 
     std::cout << std::endl;
 
+    
     // TEST WATER RIDE
-    WaterRide attraction1("Dragon Khan", -10, 0, -5.0, 120.0);
-    WaterRide attraction2("Shambhala", 30, 3, 10.0, 130.0);
+    WaterRide attraction1("Troncs", -10, 0, -5.0, 120.0);
+    WaterRide attraction2("Super Flume", 30, 3, 10.0, 130.0);
 
     std::cout << "[WaterRide] Nom: "
               << attraction1.getName() << std::endl;
@@ -155,5 +152,91 @@ int main() {
 
     std::cout << "[Simulator] Intensitat despres de posar -3: "
               << simulator1.getMotionIntensity() << std::endl; // esperat: 6
+    std:: cout << endl;
+
+    // TEST VISITOR/TICKET
+    // Creem parc:
+    Park park1("PortAventura");
+
+    // Creem àrees, les assignem al parc i hi posem atraccions:
+    Area area1("Far West", "First area ever created.");
+    Area area2("Mediterranea", "Entrance area, inspired in a small town.");
+    Area area3("Mexico", "Inspired in the mexican culture.");
+
+    park1.addArea(area1);
+    park1.addArea(area2);
+    park1.addArea(area3);
+
+
+    area1.addAttraction(&coaster1);
+    area1.addAttraction(&coaster2);
+
+    area2.addAttraction(&attraction2);
+    area2.addAttraction(&simulator1);
+
+    area3.addAttraction(&attraction1);
+
+    // Creem tiquets:
+    Ticket ticket1(1, 8);
+    Ticket ticket2(2, -5);
+    Ticket ticket3(3, 12);
+    Ticket ticket4(4, 10);
+    Ticket ticket5(5, 11);
+    Ticket ticket6(6, 15);
+
+    // Preparem attraccions excepte attraction2:
+    coaster1.prepare();
+    coaster1.start();
+
+    coaster2.prepare();
+    coaster2.start();
+
+    attraction1.prepare();
+    attraction1.start();
+
+    //attraction2.prepare();
+
+    simulator1.prepare();
+    simulator1.start();
+
+    // A la àrea far west hi hauria d'haver 2 atraccions funcionant, i a la àrea mediterrànea, 1 atracció funcionant
+    cout << "Hi ha " << area1.getRunningAttractionsCount() << " atraccions funcionant a la àrea "
+    << area1.getName() << "." << endl;
+    cout << "Hi ha " << area2.getRunningAttractionsCount() << " atraccions funcionant a la àrea "
+    << area2.getName() << "." << endl;
+
+    // Creem visitors i els associem a tiquets, àrees i parc:
+    Visitor visitor1("Peppa", 86);
+    visitor1.addTicket(&ticket1); // associem dos tiquets al visitant
+    visitor1.addTicket(&ticket2);
+    visitor1.moveToArea("Mediterranea");
+    ticket1.invalidate(); // li invalidem un tiquet
+
+    cout << visitor1.getName() << " està a la àrea " << visitor1.getCurrentArea() <<
+        ", s'ha gastat " << visitor1.getTotalSpent() << "€, i té " << visitor1.getValidTicketsCount()
+        << " tiquet(s) vàlids." << endl;
+
+
+    Visitor visitor2("Peppo", -93); // visitor amb edat negativa
+    visitor2.addTicket(&ticket3);
+
+    Visitor visitor3("Peppe", 68);
+    visitor3.addTicket(&ticket4);
+
+    Visitor visitor4("Pepppi", 2);
+    visitor4.addTicket(&ticket5);
+    visitor4.addTicket(&ticket6);
+
+
+
+    /*
+    std::cout << "[Visitor] Visitor name: "
+              << visitor2.getName()
+              << "\n[Visitor] Visitor age: "
+              << visitor2.getAge()
+              << std::endl; // esperat: 0
+
+    std::cout << std::endl;
+    */
     return 0;
 }

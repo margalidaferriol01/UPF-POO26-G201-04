@@ -11,7 +11,7 @@ class Visitor {
     private:
         std::string name;
         int age;
-        std::vector <Ticket> tickets;
+        std::vector <Ticket*> tickets;
         string currentArea;
     public:
         Visitor(std::string n, int a);
@@ -19,7 +19,7 @@ class Visitor {
         int getAge()const;
         void setName(std::string n);
         void setAge(int a);
-        void addTicket(Ticket t);
+        void addTicket(Ticket* t);
         bool removeTicket(Ticket t);
         void moveToArea(string areaName);
         string getCurrentArea() const;
