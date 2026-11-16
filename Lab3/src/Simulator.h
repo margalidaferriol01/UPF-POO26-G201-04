@@ -23,7 +23,7 @@ public:
     void resetSimulation();
     bool isHighIntensity() const;
 
-    void prepare() override;
+
 };
 
 #endif
