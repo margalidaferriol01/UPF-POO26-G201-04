@@ -35,6 +35,3 @@ bool Rollercoaster::isExtremeCoaster(){
     else return false;
 }
 
-void Rollercoaster::prepare(){
-
-}

@@ -43,7 +43,3 @@ bool Simulator::isHighIntensity() const
     return motionIntensity >= 7; // és intens si és 7 o més
 }
 
-void Simulator::prepare()
-{
-    resetSimulation(); // preparam el simulador abans d'una nova sessió
-}

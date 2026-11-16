@@ -31,7 +31,6 @@ public:
     void stop();
     bool isRunning() const;
 
-    virtual void prepare() = 0;
 };
 
 #endif
