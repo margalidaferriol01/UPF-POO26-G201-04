@@ -171,10 +171,10 @@ int main() {
 
     // Creem tiquets:
     Ticket ticket1(1, 8);
-    Ticket ticket2(2, -5);
+    Ticket ticket2(2, 12);
     Ticket ticket3(3, 12);
     Ticket ticket4(4, 10);
-    Ticket ticket5(5, 11);
+    Ticket ticket5(5, -11);
     Ticket ticket6(6, 15);
 
     // Engeguem atraccions excepte attraction2:
