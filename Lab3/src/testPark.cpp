@@ -148,9 +148,9 @@ int main() {
     Area area2("Mediterranea", "Entrance area, inspired in a small town.");
     Area area3("Mexico", "Inspired in the mexican culture.");
 
-    park1.addArea(area1);
-    park1.addArea(area2);
-    park1.addArea(area3);
+    park1.addArea(&area1);
+    park1.addArea(&area2);
+    park1.addArea(&area3);
 
     area1.addAttraction(&coaster1);
     area1.addAttraction(&coaster2);
@@ -171,10 +171,10 @@ int main() {
 
     // Creem tiquets:
     Ticket ticket1(1, 8);
-    Ticket ticket2(2, -5);
+    Ticket ticket2(2, 12);
     Ticket ticket3(3, 12);
     Ticket ticket4(4, 10);
-    Ticket ticket5(5, 11);
+    Ticket ticket5(5, -11);
     Ticket ticket6(6, 15);
 
     // Engeguem atraccions excepte attraction2:
