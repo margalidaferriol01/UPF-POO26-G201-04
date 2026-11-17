@@ -9,7 +9,7 @@ using namespace std;
 class Park {
 private:
     string name;
-    vector<Area> areas;
+    vector<Area*> areas;
     vector<Visitor> visitors;
 
 public:
@@ -19,7 +19,7 @@ public:
     string getName() const;
     void setName(string name);
 
-    void addArea(Area area);
+    void addArea(Area *area);
     bool removeArea(string name);
 
     void addVisitor(Visitor visitor);

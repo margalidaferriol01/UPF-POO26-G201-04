@@ -14,18 +14,20 @@ void Park::setName(string name) {
     this->name = name;
 }
 
-void Park::addArea(Area area) {
+void Park::addArea(Area *area) {
     this->areas.push_back(area);
 }
 
 bool Park::removeArea(string name) {
-    for (auto it = this->areas.begin(); it != this->areas.end(); ++it) {
-        if (it->getName() == name) {
-            this->areas.erase(it);
+    // auto decideix sol el tipus de la variable
+    for (auto i = areas.begin(); i != areas.end(); ++i) {
+        if (*i != nullptr && (*i)->getName() == name) {
+            areas.erase(i);  // eliminem la àrea
             return true;
         }
     }
-    return false; //retorna false si l'àrea no existeix al parc
+
+    return false; // si l'àrea no existeix al parc
 }
 
 void Park::addVisitor(Visitor visitor) {
@@ -46,7 +48,7 @@ int Park::getTotalAttractions(){
     int count = 0;
     // anem sumant el nombre d'atraccions que té cada àrea
     for(size_t i=0; i<areas.size(); i++){
-        i+=areas.at(i).getTotalAreaAttractionsCount();
+        count+=areas.at(i)->getTotalAreaAttractionsCount();
     }
     return count;
 }

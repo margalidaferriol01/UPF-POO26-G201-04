@@ -148,9 +148,9 @@ int main() {
     Area area2("Mediterranea", "Entrance area, inspired in a small town.");
     Area area3("Mexico", "Inspired in the mexican culture.");
 
-    park1.addArea(area1);
-    park1.addArea(area2);
-    park1.addArea(area3);
+    park1.addArea(&area1);
+    park1.addArea(&area2);
+    park1.addArea(&area3);
 
     area1.addAttraction(&coaster1);
     area1.addAttraction(&coaster2);
