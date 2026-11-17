@@ -25,15 +25,21 @@ double Attraction::getPrice() const {
 }
 
 void Attraction::setMaxCapacity(int cap) {
-    this->maxCapacity = cap;
+    if (cap > 0) {
+        this->maxCapacity = cap;
+    }
 }
 
 void Attraction::setDuration(int dur) {
-    this->duration = dur;
+    if (dur > 0) {
+        this->duration = dur;
+    }
 }
 
 void Attraction::setPrice(double price) {
-    this->price = price;
+    if (price >= 0.0) {
+        this->price = price;
+    }
 }
 
 void Attraction::start() {
