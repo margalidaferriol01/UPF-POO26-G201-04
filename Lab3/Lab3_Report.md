@@ -21,7 +21,7 @@ En aquest laboratori, l'objectiu és ampliar el sistema de gestió del parc d'at
   * **`WaterRide`:** Afegeix l'atribut privat `minHeight` (alçada mínima requerida per accedir-hi, sempre zero o positiva) amb el seu *getter* i *setter* corresponent. Té el mètode `prepareWaterPump()` per preparar el sistema d'aigua abans de posar-la en marxa, i `isVisitorAllowed(visitorHeight: double)`, que retorna `true` si l'alçada del visitant és igual o supera el mínim.
   * **`Simulator`:** Conté els atributs `simulationType` (descripció del tipus de simulació) i `motionIntensity` (intensitat del moviment, amb un rang de [0, 10]). Proporciona `resetSimulation()` per reiniciar la plataforma i el programari entre sessions, i `isHighIntensity()`, que retorna `true` si la intensitat és superior o igual a 7.
 
-### **2.2. Ampliacions a `Visitor`, `Area` i `Park **
+### **2.2. Ampliacions a `Visitor`, `Area` i `Park` **
 
 * **`Visitor`:**
   S'ha afegit l'atribut privat `currentArea` (de tipus `string`) per emmagatzemar el nom de l'àrea on es troba actualment el visitant, juntament amb els mètodes `moveToArea(areaName)` i `getCurrentArea()` per actualitzar-la i consultar-la. També s'han afegit `getTotalSpent()`, que suma el preu de tots els tiquets associats al visitant, i `getValidTicketsCount()`, que compta quants tiquets tenen l'estat `valid` a `true` d'un visitant. Els valors es calculen recorrent el vector `tickets`.
