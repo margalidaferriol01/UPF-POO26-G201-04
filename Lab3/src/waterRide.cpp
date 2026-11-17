@@ -12,9 +12,9 @@ WaterRide::WaterRide(string n, int cap, int dur,
     }
 }
 
-bool WaterRide::prepareWaterPump()
+void WaterRide::prepareWaterPump()
 {
-    return true; // preparam la bomba
+     // preparam la bomba
 }
 
 double WaterRide::getMinHeight() const

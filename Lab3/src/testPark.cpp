@@ -6,14 +6,14 @@
 #include "Visitor.h"
 #include "WaterRide.h"
 #include "Simulator.h"
-#include "Rollercoaster.h"
+#include "RollerCoaster.h"
 
 int main() {
     std::cout << std::boolalpha; // mostra els valors booleans com 'true' / 'false' en lloc de 1 / 0
 
     // TEST ROLLERCOASTER
-    Rollercoaster coaster1("Furious Baco", 25, 2, 8.0, 70.0, 2);
-    Rollercoaster coaster2("Shambala", -28, -4, -8.0, 0.0, -1);
+    RollerCoaster coaster1("Furious Baco", 25, 2, 8.0, 70.0, 2);
+    RollerCoaster coaster2("Shambala", -28, -4, -8.0, 0.0, -1);
 
     std::cout << "[Rollercoaster 1] Nom: "
               << coaster1.getName() << std::endl;
@@ -29,6 +29,16 @@ int main() {
               << coaster2.getMaxSpeed() << std::endl;
     std::cout << "[Rollercoaster 2] Nombre de loops corregit: "
               << coaster2.getLoops() << std::endl;
+
+    // Comprovem funcionalitat heretada
+    std::cout << "[Rollercoaster 1] Estat inicial: "
+              << coaster1.isRunning() << std::endl;
+    coaster1.start();
+    std::cout << "[Rollercoaster 1] Estat després de start(): "
+              << coaster1.isRunning() << std::endl;
+    coaster1.stop();
+    std::cout << "[Rollercoaster 1] Estat després de stop(): "
+              << coaster1.isRunning() << std::endl;
 
     // Modifiquem valors de coaster1 amb valors incorrectes:
     std::cout << "[Rollercoaster 1] MaxSpeed abans de canviar: "
@@ -46,10 +56,18 @@ int main() {
     // Mirem extreme coaster
     std::cout << "[Rollercoaster 1] És extreme coaster (abans)?: "
               << coaster1.isExtremeCoaster() << std::endl;
+
     // Canviem velocitat a una major a 80:
     coaster1.setMaxSpeed(100.0);
+
     // Comparem
     std::cout << "[Rollercoaster 1] És extreme coaster (després)?: "
+              << coaster1.isExtremeCoaster() << std::endl;
+
+    // Comprovem també el cas de tenir més de 2 loops
+    coaster1.setMaxSpeed(70.0);
+    coaster1.setLoops(3);
+    std::cout << "[Rollercoaster 1] És extreme coaster amb 3 loops?: "
               << coaster1.isExtremeCoaster() << std::endl;
 
     // Comprovem sistemes de seguretat abans d'operar
@@ -112,6 +130,11 @@ int main() {
     std::cout << "[Simulator] Intensitat alta: "
               << simulator1.isHighIntensity() << std::endl;
 
+    // Comprovem funcionalitat heretada
+    simulator1.start();
+    std::cout << "[Simulator] Estat després de start(): "
+              << simulator1.isRunning() << std::endl;
+
     // Reiniciem el simulador abans d'una nova sessió
     simulator1.resetSimulation();
     std::cout << "[Simulator] Estat després de resetSimulation(): "
@@ -126,6 +149,9 @@ int main() {
     simulator1.setMotionIntensity(6);
     std::cout << "[Simulator] Intensitat modificada: "
               << simulator1.getMotionIntensity() << std::endl; // esperat: 6
+
+    std::cout << "[Simulator] Intensitat alta amb 6: "
+              << simulator1.isHighIntensity() << std::endl; // esperat: false
 
     // Test setMotionIntensity amb valor massa alt
     simulator1.setMotionIntensity(15);
@@ -166,6 +192,7 @@ int main() {
 
     std::cout << "[Area] Far West té 'Furious Baco'?: "
               << area1.hasAttraction("Furious Baco") << std::endl; // esperat: true
+
     std::cout << "[Area] Far West té 'Troncs'?: "
               << area1.hasAttraction("Troncs") << std::endl; // esperat: false
 
@@ -186,6 +213,7 @@ int main() {
     // A l'àrea Far West hi hauria d'haver 2 atraccions funcionant, i a Mediterranea, 1 atracció funcionant
     std::cout << "Hi ha " << area1.getRunningAttractionsCount() << " atraccions funcionant a la àrea "
               << area1.getName() << "." << std::endl;
+
     std::cout << "Hi ha " << area2.getRunningAttractionsCount() << " atraccions funcionant a la àrea "
               << area2.getName() << "." << std::endl;
 
@@ -218,6 +246,7 @@ int main() {
 
     std::cout << "[Park] Està registrada 'Peppa'?: "
               << park1.isVisitorRegistered("Peppa") << std::endl; // esperat: true
+
     std::cout << "[Park] Està registrat 'Joan'?: "
               << park1.isVisitorRegistered("Joan") << std::endl; // esperat: false
 

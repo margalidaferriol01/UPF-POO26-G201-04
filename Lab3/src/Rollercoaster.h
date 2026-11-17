@@ -3,12 +3,12 @@
 
 #include "Attraction.h"
 
-class Rollercoaster : public Attraction{
+class RollerCoaster : public Attraction{
     private:
         double maxSpeed;
         int loops;
     public:
-        Rollercoaster(std::string n, int cap, int dur, 
+        RollerCoaster(std::string n, int cap, int dur, 
             double price, double speed, int loops);
         double getMaxSpeed();
         int getLoops();

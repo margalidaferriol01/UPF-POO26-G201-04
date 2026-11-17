@@ -10,7 +10,7 @@ private:
 public:
     WaterRide(string n, int cap, int dur, double price, double minHeight);
 
-    bool prepareWaterPump(); // prepara la bomba
+    void prepareWaterPump(); // prepara la bomba
     double getMinHeight() const; // retornam altura minima
     void setMinHeight(double height); // canviam altura minima
     bool isVisitorAllowed(double visitorHeight) const; // comprovam si pot pujar

@@ -28,7 +28,7 @@ clean:
 
 # COMMANDS:
 # 	Compilar: make
-#	Executar: ./TestPark
+#	Executar: ./testPark
 #	Netejar fitxers binaris/objectes: make clean
 
 # (Makefile fet amb IA)
