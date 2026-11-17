@@ -6,7 +6,8 @@ Margalida Ferriol Torres (u266481), Martí Carrasco Guitart (u266404) – P201 /
 
 En aquest laboratori, l'objectiu és ampliar el sistema de gestió del parc d'atraccions desenvolupat al Lab 2 incorporant el concepte d'**herència** i especialitzant les atraccions segons el diagrama UML dissenyat al Seminari 2. A partir de la classe base `Attraction`, s'han implementat tres noves classes derivades (`RollerCoaster`, `WaterRide` i `Simulator`), així com noves funcionalitats a les classes existents `Visitor`, `Area` i `Park`. Finalment, s'han adaptat les proves al programa principal (`testPark.cpp`) per verificar tant les operacions heredades i específiques com el compliment de totes les regles de validació.
 
-*(enganxar aquí la imatge del diagrama UML final del Seminari 2 / Lab 3)*
+<img width="687" height="510" alt="Captura de pantalla 2026-11-18 a les 0 39 07" src="https://github.com/user-attachments/assets/c0b39dae-7762-478e-9d4f-1dcfb68715ea" />
+
 
 ## **2. Implementació**
 
