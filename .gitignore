@@ -1,4 +1,15 @@
-*.o
-*.exe
 ./src/*.o
 ./src/*.exe
+
+*.dSYM/
+*.dSYM
+*.plist
+*.yml
+
+*.o
+*.out
+*.exe
+main
+output/
+
+.DS_Store
