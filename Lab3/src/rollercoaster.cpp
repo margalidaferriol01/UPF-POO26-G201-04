@@ -1,4 +1,4 @@
-#include "Rollercoaster.h"
+#include "RollerCoaster.h"
 
 RollerCoaster::RollerCoaster(std::string n, int cap, int dur, 
                             double price, double speed, int loops): 
