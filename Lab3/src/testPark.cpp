@@ -6,7 +6,7 @@
 #include "Visitor.h"
 #include "WaterRide.h"
 #include "Simulator.h"
-#include "Rollercoaster.h"
+#include "RollerCoaster.h"
 
 int main() {
     std::cout << std::boolalpha; // mostra els valors booleans com 'true' / 'false' en lloc de 1 / 0
