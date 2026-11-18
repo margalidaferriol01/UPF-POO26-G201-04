@@ -44,13 +44,13 @@ int main() {
     std::cout << "[Rollercoaster 1] MaxSpeed abans de canviar: "
               << coaster1.getMaxSpeed() << std::endl;
     coaster1.setMaxSpeed(-2.0);
-    std::cout << "[Rollercoaster 1] MaxSpeed després d'intent fallit de canviar: "
+    std::cout << "[Rollercoaster 1] MaxSpeed després d'intentar canviar-lo: "
               << coaster1.getMaxSpeed() << std::endl;
 
     std::cout << "[Rollercoaster 1] Loops abans de canviar: "
               << coaster1.getLoops() << std::endl;
     coaster1.setLoops(-2);
-    std::cout << "[Rollercoaster 1] Loops després d'intent fallit de canviar: "
+    std::cout << "[Rollercoaster 1] Loops després d'intentar canviar-lo: "
               << coaster1.getLoops() << std::endl;
 
     // Mirem extreme coaster
@@ -211,10 +211,10 @@ int main() {
     simulator1.start();
 
     // A l'àrea Far West hi hauria d'haver 2 atraccions funcionant, i a Mediterranea, 1 atracció funcionant
-    std::cout << "Hi ha " << area1.getRunningAttractionsCount() << " atraccions funcionant a la àrea "
+    std::cout << "Hi ha " << area1.getRunningAttractionsCount() << " atraccions funcionant a l'àrea "
               << area1.getName() << "." << std::endl;
 
-    std::cout << "Hi ha " << area2.getRunningAttractionsCount() << " atraccions funcionant a la àrea "
+    std::cout << "Hi ha " << area2.getRunningAttractionsCount() << " atraccions funcionant a l'àrea "
               << area2.getName() << "." << std::endl;
 
     // Creem visitors i els associem a tiquets, àrees i parc:
@@ -224,7 +224,7 @@ int main() {
     visitor1.moveToArea("Mediterranea");
     ticket1.invalidate(); // li invalidem un tiquet
 
-    std::cout << visitor1.getName() << " està a la àrea " << visitor1.getCurrentArea()
+    std::cout << visitor1.getName() << " està a l'àrea " << visitor1.getCurrentArea()
               << ", s'ha gastat " << visitor1.getTotalSpent() << "€, i té " << visitor1.getValidTicketsCount()
               << " tiquet(s) vàlids." << std::endl;
 
