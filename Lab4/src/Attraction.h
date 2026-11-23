@@ -11,6 +11,7 @@ private:
     int duration;
     double price;
     bool running;
+    bool prepared;
 
 public:
 
@@ -21,6 +22,7 @@ public:
     int getMaxCapacity() const;
     int getDuration() const;
     double getPrice() const;
+    bool isPrepared() const;
 
     //setters
     void setMaxCapacity(int cap);
@@ -30,6 +32,12 @@ public:
     void start();
     void stop();
     bool isRunning() const;
+
+    void setPrepare(bool b);
+
+    // mètode abstracte (prepare)
+    virtual void prepare() = 0;
+    virtual ~Attraction() = default; // destructor
 
 };
 

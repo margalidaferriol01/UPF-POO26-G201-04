@@ -34,3 +34,9 @@ bool WaterRide::isVisitorAllowed(double visitorHeight) const
     return visitorHeight >= this->minHeight; // comprovam si pot pujar
 }
 
+void WaterRide::prepare(){
+    if(!isRunning()){ // per preparar, l'atracció no pot estar corrent
+        prepareWaterPump();
+        setPrepare(true);
+    }
+}

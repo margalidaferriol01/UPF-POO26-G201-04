@@ -8,6 +8,8 @@ Attraction::Attraction(string n, int cap, int dur, double price) {
     this->running = false; //comença aturada per defecte
 }
 
+
+//GETERS
 string Attraction::getName() const {
     return this->name;
 }
@@ -24,6 +26,13 @@ double Attraction::getPrice() const {
     return this->price;
 }
 
+bool Attraction::isPrepared() const {
+    if(this->prepared == true) return true;
+    else return false;
+}
+
+
+//SETTERS
 void Attraction::setMaxCapacity(int cap) {
     if (cap > 0) {
         this->maxCapacity = cap;
@@ -43,13 +52,22 @@ void Attraction::setPrice(double price) {
 }
 
 void Attraction::start() {
-    this->running = true;
+    // verifiquem que estigui preparada abans d'iniciar-la
+    if(this->prepared == true){
+        this->running = true;
+    }
 }
 
 void Attraction::stop() {
+    // posem valors running i prepared a fals
     this->running = false;
+    this->prepared = false;
 }
 
 bool Attraction::isRunning() const {
     return this->running;
+}
+
+void Attraction::setPrepare(bool b){
+    this->prepared = b;
 }

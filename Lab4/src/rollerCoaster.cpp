@@ -34,3 +34,10 @@ bool RollerCoaster::isExtremeCoaster(){
     if(maxSpeed > 80.0 || loops > 2) return true; // comprovem maxspeed major que 80 i loops majors que 2 amb un OR
     else return false;
 }
+
+void RollerCoaster::prepare(){
+    if(!isRunning()){ // per preparar, l'atracció no pot estar corrent
+        checkSafetySystem();
+        setPrepare(true);
+    }
+}

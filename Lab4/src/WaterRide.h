@@ -15,6 +15,7 @@ public:
     void setMinHeight(double height); // canviam altura minima
     bool isVisitorAllowed(double visitorHeight) const; // comprovam si pot pujar
 
+    void prepare() override;
 };
 
 #endif

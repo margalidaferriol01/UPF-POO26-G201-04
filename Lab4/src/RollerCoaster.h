@@ -17,6 +17,7 @@ class RollerCoaster : public Attraction{
         void checkSafetySystem();
         bool isExtremeCoaster();
 
+        void prepare() override;
 };
 
 #endif
