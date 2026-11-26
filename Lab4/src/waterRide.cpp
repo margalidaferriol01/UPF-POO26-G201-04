@@ -14,7 +14,12 @@ WaterRide::WaterRide(string n, int cap, int dur,
 
 void WaterRide::prepareWaterPump()
 {
-     // preparam la bomba
+}
+
+void WaterRide::prepare()
+{
+    prepareWaterPump();
+    setPrepare(true);
 }
 
 double WaterRide::getMinHeight() const

@@ -1,4 +1,5 @@
 #include "Attraction.h"
+#include "Visitor.h"
 
 Attraction::Attraction(string n, int cap, int dur, double price) {
     this->name = n;
@@ -70,4 +71,31 @@ bool Attraction::isRunning() const {
 
 void Attraction::setPrepare(bool b){
     this->prepared = b;
+}
+
+void Attraction::addVisitor(Visitor* visitor)
+{
+    if (visitor == nullptr) {
+        return;
+    }
+
+    for (const auto& v : visitors) {
+        if (v == visitor) {
+            return;
+        }
+    }
+
+    visitors.push_back(visitor);
+}
+
+bool Attraction::removeVisitor(Visitor* visitor)
+{
+    for (auto it = visitors.begin(); it != visitors.end(); ++it) {
+        if (*it == visitor) {
+            visitors.erase(it);
+            return true;
+        }
+    }
+
+    return false;
 }

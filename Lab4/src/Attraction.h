@@ -2,8 +2,12 @@
 #define ATTRACTION_H
 
 #include <string>
+#include <vector>
+#include <memory>
+
 using namespace std;
 
+class Visitor; // afegim la classe Visitor per així no haver d'incloure el .h corresponent
 class Attraction {
 private:
     string name;
@@ -12,6 +16,7 @@ private:
     double price;
     bool running;
     bool prepared;
+    vector<Visitor*> visitors;
 
 public:
 
@@ -38,6 +43,9 @@ public:
     // mètode abstracte (prepare)
     virtual void prepare() = 0;
     virtual ~Attraction() = default; // destructor
+
+    void addVisitor(Visitor* visitor);
+    bool removeVisitor(Visitor* visitor);
 
 };
 

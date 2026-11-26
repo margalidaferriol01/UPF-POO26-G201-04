@@ -30,18 +30,23 @@ bool Park::removeArea(string name) {
     return false; // si l'àrea no existeix al parc
 }
 
-void Park::addVisitor(Visitor visitor) {
-    this->visitors.push_back(visitor);
+void Park::addVisitor(Visitor* visitor)
+{
+    if (visitor != nullptr) {
+        this->visitors.push_back(visitor);
+    }
 }
 
-bool Park::removeVisitor(Visitor visitor) {
-    for (auto it = this->visitors.begin(); it != this->visitors.end(); ++it) {
-        if (it->getName() == visitor.getName() && it->getAge() == visitor.getAge()) {
-            this->visitors.erase(it);
+bool Park::removeVisitor(Visitor* visitor)
+{
+    for (auto it = visitors.begin(); it != visitors.end(); ++it) {
+        if (*it == visitor) {
+            visitors.erase(it);
             return true;
         }
     }
-    return false; //retorna false si el visitant no està registrat
+
+    return false; // si el visitant no està registrat
 }
 
 int Park::getTotalAttractions(){
@@ -53,9 +58,14 @@ int Park::getTotalAttractions(){
     return count;
 }
 
-bool Park::isVisitorRegistered(string name){
-    for(size_t i=0; i<visitors.size(); i++){ // bucle que itera per cada visitant
-        if(visitors.at(i).getName() == name) return true;
+bool Park::isVisitorRegistered(string name)
+{
+    for (size_t i = 0; i < visitors.size(); i++) {
+        if (visitors.at(i) != nullptr &&
+            visitors.at(i)->getName() == name) {
+            return true;
+        }
     }
+
     return false;
 }

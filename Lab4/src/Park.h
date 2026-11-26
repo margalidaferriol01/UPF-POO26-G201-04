@@ -10,7 +10,7 @@ class Park {
 private:
     string name;
     vector<Area*> areas;
-    vector<Visitor> visitors;
+    vector<Visitor*> visitors;
 
 public:
     Park(string name);
@@ -19,11 +19,11 @@ public:
     string getName() const;
     void setName(string name);
 
-    void addArea(Area *area);
+    void addArea(Area* area);
     bool removeArea(string name);
 
-    void addVisitor(Visitor visitor);
-    bool removeVisitor(Visitor visitor);
+    void addVisitor(Visitor* visitor);
+    bool removeVisitor(Visitor* visitor);
 
     int getTotalAttractions();
     bool isVisitorRegistered(string name);

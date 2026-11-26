@@ -6,11 +6,13 @@
 #include "Attraction.h"
 using namespace std;
 
+class Visitor; // afegim la classe Visitor per així no haver d'incloure el .h corresponent
 class Area {
 private:
     string name;
     string description;
     vector<Attraction*> attractions;
+    vector<Visitor*> visitors;
 
 public:
     Area(string name, string description);
@@ -23,6 +25,13 @@ public:
     //mètodes de gestió d'atraccions
     void addAttraction(Attraction* a);
     bool removeAttraction(string name);
+
+    //mètodes de gestió de visitants
+    void addVisitor(Visitor* visitor);
+    bool removeVisitor(Visitor* visitor);
+    const vector<Visitor*>& getVisitors() const;
+    int getVisitorsCount() const;
+    bool hasVisitor(string visitorName) const;
 
     //extensió 6.2 lab 3
     int getRunningAttractionsCount();

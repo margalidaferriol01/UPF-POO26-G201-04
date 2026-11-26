@@ -1,4 +1,5 @@
 #include "Area.h"
+#include "Visitor.h"
 
 Area::Area(string name, string description) {
     this->name = name;
@@ -64,4 +65,45 @@ bool Area::hasAttraction(string name){
 
 int Area::getTotalAreaAttractionsCount(){
     return attractions.size();
+}
+
+void Area::addVisitor(Visitor* visitor)
+{
+    if (visitor != nullptr) {
+        visitors.push_back(visitor);
+    }
+}
+
+bool Area::removeVisitor(Visitor* visitor)
+{
+    for (auto it = visitors.begin(); it != visitors.end(); ++it) {
+        if (*it == visitor) {
+            visitors.erase(it);
+            return true;
+        }
+    }
+
+    return false;
+}
+
+const vector<Visitor*>& Area::getVisitors() const
+{
+    return visitors;
+}
+
+int Area::getVisitorsCount() const
+{
+    return visitors.size();
+}
+
+bool Area::hasVisitor(string visitorName) const
+{
+    for (const auto& visitor : visitors) {
+        if (visitor != nullptr &&
+            visitor->getName() == visitorName) {
+            return true;
+        }
+    }
+
+    return false;
 }
